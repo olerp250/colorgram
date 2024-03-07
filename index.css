@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: "Evolventa";
-    src: url("./fonts/Evolventa-Oblique.woff2") format ("woff2");
+    src: url("./fonts/Evolventa-BoldOblique.woff2") format ("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -223,6 +223,23 @@ a:hover{
     padding-inline: var(--container--padding-x);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
 .header {
     display: flex;
     justify-content: space-around;
@@ -257,22 +274,206 @@ a:hover{
     border: none solid var(--color-white);
 }
 
+/*banner*/
 
-
-
-@media (max-width:724px) {
-    .header {
-        flex-wrap: wrap;
-        padding-top: 8px;
-        padding-inline: 100px;
-    }
-    .header-menu {
-        order: 1;
-        flex-basis: 100%;
-    }
-    .header-icons {
-        flex-direction: row;
-        justify-content: flex-start;
-    }
+.button {
+    font-style: oblique;
+    display: inline-flex; 
+    align-items: center;
+    padding: 10px 40px 10px 40px;
+    height: 56px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 2;
+    border-radius: 10px
 }
 
+.banner-catalog-button {
+    background-color: #FFC8C8;
+    border: 2px solid #ccc5b9;
+    margin-right: -100px;
+    margin-bottom: 40px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+
+
+.banner-catalog-button:hover {
+    background-color: #FF728B;
+    border: 2px solid #ccc5b9;
+    color: var(--color-white);
+
+}
+
+.banner-body {
+    display: flex;
+    min-height: 574px ;
+    justify-content: center;
+    padding-right: 0px;
+    align-items: flex-end;
+}
+
+.banner-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
+    margin-right: 0px;
+}
+
+.banner-background-colorgram {
+  width: 506px;
+  height: 134px;
+  color: #FF728B;
+  padding-left: 200px;
+}
+
+.banner-background-Text {
+    color: var(--color-green);
+    font-size: 48px;
+    font-style: oblique;
+}
+/*.banner-background::before {
+    content: '';
+    width: 500px;
+    height: 120px;
+    background: url('./icons/Colorgram.svg') center/contain no-repeat;
+    margin: 100px;
+}*/
+
+.banner-background.image::before {
+  content: '';
+  background: url('./images/banner.png') center/contain no-repeat;
+  position: relative;
+  width: 951px;
+  height: 585px;
+  top: 0;
+  margin-left: -30px;
+  /*flex-shrink: 0;*/
+
+}
+
+@media (max-width:724px) {
+  .header {
+      flex-wrap: wrap;
+      padding-top: 8px;
+      padding-inline: 100px;
+  }
+  .header-menu {
+      order: 1;
+      flex-basis: 100%;
+  }
+  .header-icons {
+      flex-direction: row;
+      justify-content: flex-start;
+  }
+  .banner-body {
+    min-height: 390px ;
+    padding-top: 0px;
+    padding-right: 0px;
+  }
+  .banner-background.image::before {
+    width: 100vh;
+    height: 390px;
+    margin: auto;
+    margin-bottom: -900;
+    /*margin-block: -100px;
+    margin-inline: -50px;*/
+  }
+  .banner-background {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 0px;
+    padding-inline: 8px;
+  }
+
+  .button {
+    font-style: oblique;
+    display: inline-flex; 
+    align-items: center;
+    padding: 10px 40px 10px 40px;
+    height: 54px;
+    width: auto;
+    font-size: 18px;
+    border-radius: 10px
+  }
+  .banner-background {
+    display: grid;
+    grid-template-columns: -50px 1fr;
+    justify-items: end;
+    align-items: end;
+  }
+
+  .banner-catalog-button {
+    position: absolute;
+    margin-right: auto;
+    margin-top: -900px;
+    top: -150px;
+    left: 100px;
+    
+  }
+  /*.banner-background-colorgram {
+    position: absolute;
+    margin-top: -170px;
+    top: -150px;
+    left: 100px;
+    z-index: 2;
+  } */
+}
+
+@media (max-width:1400px) {
+  .banner-body {
+    flex-wrap: wrap;
+    padding-top: 8px;
+    padding-inline: 0px;
+  }
+
+  .banner-background.image {
+    order:-1;
+  }
+
+  .banner-background.image::before {
+    width: 100vw;
+    height: 390px;
+    margin: auto;
+
+  }
+  .banner-background {
+
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    column-gap: 8px;
+    padding-left: 0px;
+  }
+
+  .banner-background-colorgram {
+    padding-top: 20px;
+    padding-inline: 8px;
+    order:1;
+  }
+
+  .banner-background-colorgram-svg {
+    width: 253px;
+    height: 67px;
+  }
+
+  .banner-background-Text {
+    font-size: 16px;
+    padding-inline: 8px;
+  }
+.banner-catalog-button {
+  position: relative;
+  background-color: #FFC8C8;
+  border: 2px solid #ccc5b9;
+  margin-right: -100px;
+  margin-bottom: 40px;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+}
